@@ -682,6 +682,10 @@ TXLiveBaseDelegate,TXLivePlayListener,TXVodPlayListener>
     config.connectRetryInterval = 1;
     config.connectRetryCount = 1;
     [self.vodPlayer setConfig:config];
+    // 开启 VR
+     NSMutableDictionary *extInfoMap = [NSMutableDictionary dictionary];
+    [extInfoMap setObject:@"11" forKey:@"PARAM_MODULE_TYPE"];
+    [self.vodPlayer setExtentOptionInfo:extInfoMap];
     // 挂载字幕
     if (_playerModel.subtitlesArray.count > 0) {
         for (SuperPlayerSubtitles *subtitles in _playerModel.subtitlesArray) {
